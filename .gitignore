@@ -1,0 +1,9 @@
+
+DNABERT/examples/unfiltered_outputs/output_4merbybase/pytorch_model.bin
+data/SRR10971019_subreads.fastq
+DNABERT/examples/filtered_outputs/filtered_0.9_bybase_3mer/pytorch_model.bin
+DNABERT/examples/sample_data/6mer_train_bybase_1600rec.tsv
+DNABERT/examples/sample_data/new/cached_train_6-new-12w-0_75_sp
+*.bin
+DNABERT/examples/sample_data/cached_train_6-new-12w-0_75_sp
+*.pt
