@@ -1,0 +1,1 @@
+python -u 6mer_bybase_dev_200rec.py > out_6mer_bybase_dev_200rec.txt
