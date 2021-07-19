@@ -1,0 +1,125 @@
+nohup: ignoring input
+07/13/2021 17:37:05 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 8, distributed training: False, 16-bits training: False
+07/13/2021 17:37:05 - INFO - transformers.configuration_utils -   loading configuration file 6-new-12w-0/config.json
+07/13/2021 17:37:05 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_ids": 0,
+  "finetuning_task": "sp",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 4096,
+  "num_return_sequences": 1,
+  "num_rnn_layer": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "rnn": "lstm",
+  "rnn_dropout": 0.0,
+  "rnn_hidden": 768,
+  "split": 10,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 4101
+}
+
+07/13/2021 17:37:06 - INFO - transformers.tokenization_utils -   loading file https://raw.githubusercontent.com/jerryji1993/DNABERT/master/src/transformers/dnabert-config/bert-config-6/vocab.txt from cache at /home/wuws/.cache/torch/transformers/ea1474aad40c1c8ed4e1cb7c11345ddda6df27a857fb29e1d4c901d9b900d32d.26f8bd5a32e49c2a8271a46950754a4a767726709b7741c68723bc1db840a87e
+07/13/2021 17:37:06 - INFO - transformers.modeling_utils -   loading weights file 6-new-12w-0/pytorch_model.bin
+07/13/2021 17:37:08 - INFO - transformers.modeling_utils -   Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+07/13/2021 17:37:08 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.decoder.bias']
+07/13/2021 17:37:08 - INFO - __main__ -   finish loading model
+07/13/2021 17:37:12 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, attention_probs_dropout_prob=0.1, beta1=0.9, beta2=0.999, cache_dir='', config_name='', data_dir='sample_data', device=device(type='cuda'), do_ensemble_pred=False, do_eval=True, do_lower_case=False, do_predict=False, do_train=True, do_visualize=False, early_stop=0, eval_all_checkpoints=False, evaluate_during_training=True, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, hidden_dropout_prob=0.1, learning_rate=0.0002, local_rank=-1, logging_steps=100, max_grad_norm=1.0, max_seq_length=75, max_steps=-1, model_name_or_path='6-new-12w-0', model_type='dna', n_gpu=8, n_process=8, no_cuda=False, num_rnn_layer=2, num_train_epochs=3.0, output_dir='./output_6merbybase_summary', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=16, per_gpu_pred_batch_size=8, per_gpu_train_batch_size=16, predict_dir=None, predict_scan_size=1, result_dir=None, rnn='lstm', rnn_dropout=0.0, rnn_hidden=768, save_steps=4000, save_total_limit=None, seed=42, server_ip='', server_port='', should_continue=False, task_name='sp', tokenizer_name='dna6', visualize_data_dir=None, visualize_models=None, visualize_train=False, warmup_percent=0.1, warmup_steps=0, weight_decay=0.01)
+07/13/2021 17:37:12 - INFO - __main__ -   Loading features from cached file sample_data/cached_train_6-new-12w-0_75_sp
+07/13/2021 17:37:20 - INFO - __main__ -   ***** Running training *****
+07/13/2021 17:37:20 - INFO - __main__ -     Num examples = 335862
+07/13/2021 17:37:20 - INFO - __main__ -     Num Epochs = 3
+07/13/2021 17:37:20 - INFO - __main__ -     Instantaneous batch size per GPU = 16
+07/13/2021 17:37:20 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 128
+07/13/2021 17:37:20 - INFO - __main__ -     Gradient Accumulation steps = 1
+07/13/2021 17:37:20 - INFO - __main__ -     Total optimization steps = 7872
+07/13/2021 17:37:20 - INFO - __main__ -     Continuing training from checkpoint, will skip to saved global_step
+07/13/2021 17:37:20 - INFO - __main__ -     Continuing training from epoch 0
+07/13/2021 17:37:20 - INFO - __main__ -     Continuing training from global step 0
+07/13/2021 17:37:20 - INFO - __main__ -     Will skip the first 0 steps in the first epoch
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/2624 [00:00<?, ?it/s][AIteration:   0%|          | 0/2624 [00:11<?, ?it/s]
+Epoch:   0%|          | 0/3 [00:11<?, ?it/s]
+Traceback (most recent call last):
+  File "run_finetune_withdebugmessages.py", line 1300, in <module>
+    main()
+  File "run_finetune_withdebugmessages.py", line 1115, in main
+    global_step, tr_loss = train(args, train_dataset, model, tokenizer)
+  File "run_finetune_withdebugmessages.py", line 284, in train
+    outputs = model(**inputs)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 148, in forward
+    inputs, kwargs = self.scatter(inputs, kwargs, self.device_ids)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in scatter
+    return scatter_kwargs(inputs, kwargs, device_ids, dim=self.dim)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 37, in scatter_kwargs
+    kwargs = scatter(kwargs, target_gpus, dim) if kwargs else []
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 28, in scatter
+    res = scatter_map(inputs)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 19, in scatter_map
+    return list(map(type(obj), zip(*map(scatter_map, obj.items()))))
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 15, in scatter_map
+    return list(zip(*map(scatter_map, obj)))
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 13, in scatter_map
+    return Scatter.apply(target_gpus, None, dim, obj)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/nn/parallel/_functions.py", line 89, in forward
+    outputs = comm.scatter(input, target_gpus, chunk_sizes, ctx.dim, streams)
+  File "/home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/cuda/comm.py", line 147, in scatter
+    return tuple(torch._C._scatter(tensor, devices, chunk_sizes, dim, streams))
+RuntimeError: CUDA error: out of memory (malloc at /opt/conda/conda-bld/pytorch_1579027003190/work/c10/cuda/CUDACachingAllocator.cpp:260)
+frame #0: c10::Error::Error(c10::SourceLocation, std::string const&) + 0x47 (0x7fcb5f8a0627 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1ea4a (0x7fcb5fae4a4a in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libc10_cuda.so)
+frame #2: <unknown function> + 0x1ff2e (0x7fcb5fae5f2e in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libc10_cuda.so)
+frame #3: THCStorage_resize + 0xa3 (0x7fc89620cb13 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #4: at::native::empty_strided_cuda(c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions const&) + 0x626 (0x7fc897c42da6 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x417715a (0x7fc89611e15a in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #6: <unknown function> + 0x1b0a0c1 (0x7fc893ab10c1 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #7: <unknown function> + 0x36683f0 (0x7fc89560f3f0 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #8: <unknown function> + 0x1b0a0c1 (0x7fc893ab10c1 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #9: <unknown function> + 0x1872ade (0x7fc893819ade in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #10: at::native::to(at::Tensor const&, c10::TensorOptions const&, bool, bool, c10::optional<c10::MemoryFormat>) + 0x245 (0x7fc89381ab35 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #11: <unknown function> + 0x1bb7fda (0x7fc893b5efda in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #12: <unknown function> + 0x389dca6 (0x7fc895844ca6 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #13: <unknown function> + 0x1c02a22 (0x7fc893ba9a22 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #14: torch::cuda::scatter(at::Tensor const&, c10::ArrayRef<long>, c10::optional<std::vector<long, std::allocator<long> > > const&, long, c10::optional<std::vector<c10::optional<c10::cuda::CUDAStream>, std::allocator<c10::optional<c10::cuda::CUDAStream> > > > const&) + 0x710 (0x7fc896518380 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch.so)
+frame #15: <unknown function> + 0x9f74eb (0x7fcb6085e4eb in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch_python.so)
+frame #16: <unknown function> + 0x28c076 (0x7fcb600f3076 in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #26: THPFunction_apply(_object*, _object*) + 0xa1f (0x7fcb604dce3f in /home/wuws/miniconda3/envs/dnabert/lib/python3.6/site-packages/torch/lib/libtorch_python.so)
+

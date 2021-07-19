@@ -1,0 +1,18 @@
+============================================================
+<class 'transformers.tokenization_dna.DNATokenizer'>
+============================================================
+<class 'transformers.tokenization_dna.DNATokenizer'>
+finish loading examples
+number of processes for converting feature: 12
+1 processor started !
+2 processor started !
+3 processor started !
+4 processor started !
+5 processor started !
+6 processor started !
+7 processor started !
+8 processor started !
+9 processor started !
+10 processor started !
+11 processor started !
+12 processor started !
