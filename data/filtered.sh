@@ -1,0 +1,1 @@
+python -u filtered_0.9_both_bybase_3mer.py > out_filtered_0.9_both_bybase_3mer.txt

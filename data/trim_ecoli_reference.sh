@@ -1,0 +1,1 @@
+python -u trim_ecoli_reference.py > out_trim_ecoli_reference.txt

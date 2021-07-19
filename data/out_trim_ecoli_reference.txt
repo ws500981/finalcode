@@ -1,0 +1,16 @@
+ori_reference_length:  4641652
+original sequence record: 
+ ID: NC_000913.3
+Name: NC_000913.3
+Description: NC_000913.3 Escherichia coli str. K-12 substr. MG1655, complete genome
+Number of features: 0
+Seq('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAG...TTC')
+length of ori-sequence:  4641652 
+
+trimmed sub-sequence record: 
+ ID: NC_000913.3
+Name: NC_000913.3
+Description: NC_000913.3 Escherichia coli str. K-12 substr. MG1655, 100,000 bases
+Number of features: 0
+Seq('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAG...ATT')
+length of sub-sequence:  100000
