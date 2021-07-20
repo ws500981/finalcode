@@ -248,7 +248,6 @@ def train(args, train_dataset, model, tokenizer):
         
     tr_loss, logging_loss = 0.0, 0.0
     model.zero_grad()
-    print("debug message0")
     train_iterator = trange(
         epochs_trained, int(args.num_train_epochs), desc="Epoch", disable=args.local_rank not in [-1, 0],
     )
@@ -257,7 +256,6 @@ def train(args, train_dataset, model, tokenizer):
     best_auc = 0
     last_auc = 0
     stop_count = 0
-    print("debug message1")
     for _ in train_iterator:
         epoch_iterator = tqdm(train_dataloader, desc="Iteration", disable=args.local_rank not in [-1, 0])
         for step, batch in enumerate(epoch_iterator):
@@ -267,26 +265,16 @@ def train(args, train_dataset, model, tokenizer):
                 steps_trained_in_current_epoch -= 1
                 continue
 
-            print("debug message2")
-
             model.train()
 
-            print("after model.train(), debug message3")
-
             batch = tuple(t.to(args.device) for t in batch)
-            print("after model.train(), debug message4")
             inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": batch[3]}
-            print("after model.train(), debug message5")
             if args.model_type != "distilbert":
                 inputs["token_type_ids"] = (
                     batch[2] if args.model_type in TOKEN_ID_GROUP else None
                 )  # XLM, DistilBERT, RoBERTa, and XLM-RoBERTa don't use segment_ids
-            print("after model.train(), debug message6")
             outputs = model(**inputs)
-            print("after model.train(), debug message7")
             loss = outputs[0]  # model outputs are always tuple in transformers (see doc)
-
-            print("debug message8")
 
             if args.n_gpu > 1:
                 loss = loss.mean()  # mean() to average on multi-gpu parallel training
@@ -668,7 +656,6 @@ def visualize(args, model, tokenizer, kmer, prefix=""):
                     attn_score[i] = 0
                     break
 
-            # attn_score[0] = 0    
             counts = np.zeros([len(attn_score)+kmer-1])
             real_scores = np.zeros([len(attn_score)+kmer-1])
             for i, score in enumerate(attn_score):
@@ -677,11 +664,6 @@ def visualize(args, model, tokenizer, kmer, prefix=""):
                     real_scores[i+j] += score
             real_scores = real_scores / counts
             real_scores = real_scores / np.linalg.norm(real_scores)
-            
-        
-            # print(index)
-            # print(real_scores)
-            # print(len(real_scores))
 
             scores[index] = real_scores
         
@@ -1025,13 +1007,9 @@ def main():
 
     # Setup CUDA, GPU & distributed training
     if args.local_rank == -1 or args.no_cuda:
-        print("in if branch!")
-        print("args.local_rank",args.local_rank)
         device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
         args.n_gpu = torch.cuda.device_count()
     else:  # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
-        print("in else branch!")
-        print("args.local_rank",args.local_rank)
         torch.cuda.set_device(args.local_rank)
         device = torch.device("cuda", args.local_rank)
         torch.distributed.init_process_group(backend="nccl")

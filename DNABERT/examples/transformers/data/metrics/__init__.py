@@ -76,12 +76,10 @@ if _has_sklearn:
         recall = recall_score(y_true=labels, y_pred=preds, average="macro")
         f1 = f1_score(y_true=labels, y_pred=preds, average="macro")
         mcc = matthews_corrcoef(labels, preds)
-        #auc = roc_auc_score(labels, probs, average="macro", multi_class="ovo")
         return {
             "acc": acc,
             "f1": f1,
             "mcc": mcc,
-            #"auc": auc,
             "precision": precision,
             "recall": recall,
         }
@@ -103,7 +101,6 @@ if _has_sklearn:
             return acc_f1_mcc_auc_pre_rec(preds, labels, probs)
         elif task_name == "dnaprom":
             return acc_f1_mcc_auc_pre_rec(preds, labels, probs)
-            # return {"acc": simple_accuracy(preds, labels)}
         elif task_name == "sst-2":
             return {"acc": simple_accuracy(preds, labels)}
         elif task_name in ["dna690", "dnapair"]:

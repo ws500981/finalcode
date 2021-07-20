@@ -165,15 +165,10 @@ def glue_convert_examples_to_features(
 
     return features
 
-
-####### WS's CODE#######
-
 class SequencePredictionProcessor(DataProcessor):
     #create label list
     #return all combinations of ATCG in 6 letters (4*4*4*4*4*4 combinations in total)
-    #method 1: using recursion
     def get_letter(self, no_letter, n, i, label):
-        #print(no_letter)
         if n == 0:
             if len(label) == no_letter:
                 self.label_list.append(label)
@@ -206,10 +201,7 @@ class SequencePredictionProcessor(DataProcessor):
         self.label_list = []
         for b in range(0,4): # b defines the starting character
             self.get_letter(6, 6, b, label) # n = 6 means there are 6 characters in one word, label is the initial word which is ""
-            #break
         self.list = list(dict.fromkeys(self.label_list))
-        #print(label_list)
-        #print(len(label_list))
         return self.list
 
     def get_train_examples(self, data_dir):
@@ -223,18 +215,11 @@ class SequencePredictionProcessor(DataProcessor):
         """Creates examples for the training and dev sets."""
         examples = []
         for (i, line) in enumerate(lines):
-            #if i == 0:
-            #    continue
             guid = "%s-%s" % (set_type, i)
             text_a = line[0]
             label = line[1]
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
-
-####### end of WS's CODE#######
-
-
-
 
 class DnaPromProcessor(DataProcessor):
     """Processor for the DNA promoter data"""
@@ -662,7 +647,6 @@ class WnliProcessor(DataProcessor):
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
-#WS added the SP processor in the last line
 glue_tasks_num_labels = {
     "cola": 2,
     "mnli": 3,
@@ -699,7 +683,6 @@ glue_processors = {
     "sp": SequencePredictionProcessor,
 }
 
-#WS added the SP processor in the last line
 glue_output_modes = {
     "cola": "classification",
     "mnli": "classification",
