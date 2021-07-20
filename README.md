@@ -1,6 +1,7 @@
 # DNABERT For Next Sentence Prediction
 
-<PROJECT DESCRIPTION HERE>
+This project was about using a Natural Language Processing model for improving DNA assembly: 
+One of the main challenges in genomics is the determination of genome sequence using sequenced DNA fragments called reads. The standard procedure is the construction of a graph from overlapping reads and finding a path through it. The path represents the final sequence. However, there are no exact algorithms that could accomplish this problem in a reasonable amount of time. Therefore, deep learning methods and reinforcement learning algorithms for graph simplifications are used in this project to develop suitable and efficient models for locating critical patterns in graphs. This project aimed to use a Natural Language Processing model for DNA assembly at nodes on the graph to predict the next sequence node, hence helping to simplify the graph.
 
 ## Features
 
