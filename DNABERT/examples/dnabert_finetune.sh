@@ -2,7 +2,7 @@ export KMER=3
 export MODEL_PATH=3-new-12w-0
 export DATA_PATH=sample_data
 export OUTPUT_PATH=./filtered_0.9_bybase_3mer
-python -u run_finetune_withdebugmessages.py \
+python -u run_finetune.py \
     --model_type dna \
     --tokenizer_name=dna$KMER \
     --model_name_or_path $MODEL_PATH \
